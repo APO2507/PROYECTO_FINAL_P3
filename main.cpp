@@ -141,7 +141,7 @@ vector<Movie> readMoviesFromCSV(const string &filename) {
 
 int main() {
     //ajusten la ruta a su computadora
-    string filename = "C:/Users/esaua/PROYECTO_PROGRA3/mpst_full_data.csv";
+    string filename = "../mpst_full_data.csv";
     vector<Movie> movies = readMoviesFromCSV(filename);
 
     // Crear el Trie e insertar todas las películas
