@@ -4,5 +4,5 @@
 
 ## Integrantes
 * Marco Esau Zinedine Apolinario Lainez
-* Nombre y Apellidos
+* Luis Yucef Julio Mendez Carazas
 * Nombre y Apellidos
