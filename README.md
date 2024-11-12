@@ -5,4 +5,4 @@
 ## Integrantes
 * Marco Esau Zinedine Apolinario Lainez
 * Luis Yucef Julio Mendez Carazas
-* Nombre y Apellidos
+* Gabriel Raymi Vaccaro Ortiz
