@@ -6,3 +6,4 @@
 * Marco Esau Zinedine Apolinario Lainez
 * Luis Yucef Julio Mendez Carazas
 * Gabriel Raymi Vaccaro Ortiz
+* Francisco Jose Lira Francia
