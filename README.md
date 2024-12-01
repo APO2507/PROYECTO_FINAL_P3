@@ -7,6 +7,79 @@
 * Luis Yucef Julio Mendez Carazas
 * Gabriel Raymi Vaccaro Ortiz
 * Francisco Jose Lira Francia
+### Implementación de Lectura de Archivo CSV
+
+Este módulo implementa la funcionalidad para cargar datos desde un archivo CSV en un vector de punteros compartidos que representan películas. Es una solución eficiente que utiliza la biblioteca estándar de C++ para el manejo de archivos y cadenas.
+
+### Funcionalidades Implementadas
+
+#### 1. Lectura de Archivo CSV
+La función `readMoviesFromCSV` procesa un archivo CSV que contiene información de películas y carga cada entrada como un objeto `Movie` en un vector.
+
+**Características**
+- Apertura de Archivo: Abre el archivo especificado y verifica que esté disponible antes de procesarlo.
+- Procesamiento de Cabecera: Ignora la primera línea del archivo, que generalmente contiene los nombres de las columnas.
+- Extracción de Datos: Utiliza stringstream para separar y extraer los valores de cada columna.
+- Creación de Objetos Dinámicos: Los datos de cada fila se almacenan en un objeto Movie creado dinámicamente usando shared_ptr.
+- Manejo Automático de Memoria: Utiliza punteros compartidos para evitar fugas de memoria.
+
+###### Código Relevante
+``` cpp
+vector<shared_ptr<Movie>> readMoviesFromCSV(const string &filename) {
+    vector<shared_ptr<Movie>> movies;
+    ifstream file(filename);
+
+    if (!file.is_open()) {
+        cerr << "Error opening file" << endl;
+        return movies;
+    }
+
+    string line;
+    getline(file, line);
+
+    while (getline(file, line)) {
+        stringstream ss(line);
+        shared_ptr<Movie> movie = make_shared<Movie>();
+
+        getline(ss, movie->imdb_id, ',');
+        getline(ss, movie->title, ',');
+        getline(ss, movie->plot_synopsis, ',');
+        getline(ss, movie->tags, ',');
+        getline(ss, movie->split, ',');
+        getline(ss, movie->synopsis_source, ',');
+
+        movies.push_back(movie);
+    }
+
+    file.close();
+    return movies;
+}
+```
+#### Requisitos del Archivo CSV
+
+El archivo debe tener las columnas en el siguiente formato:
+- Cabecera: La primera línea del archivo contiene los nombres de las columnas.
+- Filas: Cada fila representa una película con los siguientes campos:
+  - imdb_id: Identificador único en IMDb.
+  - title: Título de la película.
+  - plot_synopsis: Resumen del argumento.
+  - tags: Etiquetas relacionadas.
+  - split: Clasificación (entrenamiento/prueba).
+  - synopsis_source: Fuente de la sinopsis.
+
+###### Ejemplo de Formato CSV
+```
+imdb_id,title,plot_synopsis,tags,split,synopsis_source
+tt0111161,The Shawshank Redemption,"Two imprisoned men bond...",Drama,train,IMDb
+tt0068646,The Godfather,"The aging patriarch of an organized crime...",Crime,train,IMDb
+```
+
+#### Beneficios de la Implementación
+- Eficiencia: Procesa grandes archivos CSV de manera rápida.
+- Escalabilidad: El uso de punteros compartidos permite manejar grandes cantidades de datos sin problemas de memoria.
+- Flexibilidad: Puede adaptarse fácilmente a otros formatos de archivo añadiendo más columnas o cambiando la estructura del objeto `Movie`.
+
+
 
 ### Implementación de Búsqueda y Algoritmo de Relevancia
 
