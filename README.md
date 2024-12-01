@@ -7,6 +7,9 @@
 * Luis Yucef Julio Mendez Carazas
 * Gabriel Raymi Vaccaro Ortiz
 * Francisco Jose Lira Francia
+
+## EXPLICACIÓN CÓDIGO
+
 ### Implementación de Lectura de Archivo CSV
 
 Este módulo implementa la funcionalidad para cargar datos desde un archivo CSV en un vector de punteros compartidos que representan películas. Es una solución eficiente que utiliza la biblioteca estándar de C++ para el manejo de archivos y cadenas.
