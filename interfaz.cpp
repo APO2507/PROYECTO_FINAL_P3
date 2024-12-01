@@ -1,8 +1,11 @@
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <string>
 #include <vector>
 #include <unordered_set>
 #include <unordered_map>
+
 
 using namespace std;
 
@@ -21,8 +24,6 @@ struct Pelicula {
 class PlataformaStreaming {
 private:
     vector<Pelicula> peliculas;             // Lista de películas
-    unordered_set<int> likes;               // IDs de películas que el usuario le gusta
-    unordered_set<string> tagsGustados;     // Tags relacionados con las películas que le gustan al usuario
 
 public:
     // Agrega una película a la plataforma
@@ -30,60 +31,59 @@ public:
         peliculas.push_back(pelicula);
     }
 
-    // Marca una película como "like" y actualiza los tags gustados
-    void darLike(int peliculaId) {
-        for (const auto& pelicula : peliculas) {
-            if (pelicula.id == peliculaId) {
-                likes.insert(peliculaId);
-                tagsGustados.insert(pelicula.tags.begin(), pelicula.tags.end());
-                break;
-            }
-        }
-    }
-
-    // Muestra información de una película
-    void mostrarPelicula(const Pelicula& pelicula) {
-        cout << "ID: " << pelicula.id << "\n";
-        cout << "Título: " << pelicula.titulo << "\n";
-        cout << "Sinopsis: " << pelicula.sinopsis << "\n";
-        cout << "Tags: ";
-        for (const auto& tag : pelicula.tags) {
-            cout << tag << " ";
-        }
-        cout << "\n\n";
-    }
-
-    // Busca películas por título y las muestra
-    void buscarPelicula(const string& titulo) {
-        cout << "Resultados de búsqueda para: " << titulo << "\n";
-        for (const auto& pelicula : peliculas) {
-            if (pelicula.titulo.find(titulo) != string::npos) {
-                mostrarPelicula(pelicula);
-            }
-        }
-    }
-
     // Muestra todas las películas guardadas
     void mostrarPeliculasGuardadas() {
         cout << "Películas guardadas:\n";
         for (const auto& pelicula : peliculas) {
-            mostrarPelicula(pelicula);
+            cout << "ID: " << pelicula.id << "\n";
+            cout << "Título: " << pelicula.titulo << "\n";
+            cout << "Sinopsis: " << pelicula.sinopsis << "\n";
+            cout << "Tags: ";
+            for (const auto& tag : pelicula.tags) {
+                cout << tag << " ";
+            }
+            cout << "\n\n";
         }
     }
 
-    // Muestra recomendaciones basadas en los tags gustados
-    void mostrarSimilares() {
-        cout << "Recomendaciones basadas en tus gustos:\n";
-        for (const auto& pelicula : peliculas) {
-            if (likes.count(pelicula.id) == 0) { // Evitar recomendar películas ya en likes
-                for (const auto& tag : pelicula.tags) {
-                    if (tagsGustados.count(tag) > 0) {
-                        mostrarPelicula(pelicula);
-                        break; // Mostrar cada película solo una vez
-                    }
-                }
-            }
+    // Cargar películas desde un archivo CSV
+    void cargarDesdeCSV(const string& rutaArchivo) {
+        ifstream archivo(rutaArchivo);
+        if (!archivo.is_open()) {
+            cerr << "Error al abrir el archivo: " << rutaArchivo << "\n";
+            return;
         }
+
+        string linea;
+        while (getline(archivo, linea)) {
+            if (linea.empty()) continue;
+
+            stringstream ss(linea);
+            string idStr, titulo, sinopsis, tagsStr;
+
+            // Leer los campos separados por comas
+            getline(ss, idStr, ',');
+            getline(ss, titulo, ',');
+            getline(ss, sinopsis, ',');
+            getline(ss, tagsStr, ',');
+
+            // Convertir ID a entero
+            int id = stoi(idStr);
+
+            // Procesar tags (separados por "|")
+            unordered_set<string> tags;
+            stringstream tagsStream(tagsStr);
+            string tag;
+            while (getline(tagsStream, tag, '|')) {
+                tags.insert(tag);
+            }
+
+            // Crear la película y agregarla
+            agregarPelicula(Pelicula(id, titulo, sinopsis, tags));
+        }
+
+        archivo.close();
+        cout << "Películas cargadas desde el archivo: " << rutaArchivo << "\n";
     }
 };
 
@@ -91,25 +91,12 @@ public:
 int main() {
     PlataformaStreaming plataforma;
 
-    // Agregar películas a la plataforma
-    plataforma.agregarPelicula(Pelicula(1, "El origen", "Un ladrón que roba secretos del subconsciente.", {"ciencia ficción", "acción", "sueños"}));
-    plataforma.agregarPelicula(Pelicula(2, "La red social", "La historia detrás de Facebook.", {"drama", "tecnología"}));
-    plataforma.agregarPelicula(Pelicula(3, "Interestelar", "Viajes espaciales para salvar a la humanidad.", {"ciencia ficción", "drama", "espacio"}));
-
-    // Dar like a una película
-    plataforma.darLike(1);
-
-    // Buscar películas
-    cout << "Búsqueda: ";
-    string busqueda;
-    cin >> busqueda;
-    plataforma.buscarPelicula(busqueda);
+    // Cargar películas desde el archivo CSV
+    string rutaArchivo = "peliculas.csv";
+    plataforma.cargarDesdeCSV(rutaArchivo);
 
     // Mostrar películas guardadas
     plataforma.mostrarPeliculasGuardadas();
-
-    // Mostrar recomendaciones
-    plataforma.mostrarSimilares();
 
     return 0;
 }
