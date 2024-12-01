@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/esaua/PROYECTO_PROGRA3/PROYECTO_FINAL_P3/parte1+2.cpp">
+		<Unit filename="C:/Users/esaua/PROYECTO_PROGRA3/PROYECTO_FINAL_P3/plataforma.cpp">
 			<Option target="PROYECTO_PROGRA3"/>
 		</Unit>
 		<Unit filename="C:/Users/esaua/PROYECTO_PROGRA3/PROYECTO_FINAL_P3/CMakeLists.txt">

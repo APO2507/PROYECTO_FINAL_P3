@@ -68,28 +68,28 @@ include CMakeFiles/PROYECTO_PROGRA3.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/PROYECTO_PROGRA3.dir/flags.make
 
-CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj: CMakeFiles/PROYECTO_PROGRA3.dir/flags.make
-CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj: C:/Users/esaua/PROYECTO_PROGRA3/PROYECTO_FINAL_P3/parte1+2.cpp
-CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj: CMakeFiles/PROYECTO_PROGRA3.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj -MF CMakeFiles\PROYECTO_PROGRA3.dir\parte1+2.cpp.obj.d -o CMakeFiles\PROYECTO_PROGRA3.dir\parte1+2.cpp.obj -c C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\parte1+2.cpp
+CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.obj: CMakeFiles/PROYECTO_PROGRA3.dir/flags.make
+CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.obj: C:/Users/esaua/PROYECTO_PROGRA3/PROYECTO_FINAL_P3/plataforma.cpp
+CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.obj: CMakeFiles/PROYECTO_PROGRA3.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.obj -MF CMakeFiles\PROYECTO_PROGRA3.dir\plataforma.cpp.obj.d -o CMakeFiles\PROYECTO_PROGRA3.dir\plataforma.cpp.obj -c C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\plataforma.cpp
 
-CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\parte1+2.cpp > CMakeFiles\PROYECTO_PROGRA3.dir\parte1+2.cpp.i
+CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\plataforma.cpp > CMakeFiles\PROYECTO_PROGRA3.dir\plataforma.cpp.i
 
-CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\parte1+2.cpp -o CMakeFiles\PROYECTO_PROGRA3.dir\parte1+2.cpp.s
+CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\plataforma.cpp -o CMakeFiles\PROYECTO_PROGRA3.dir\plataforma.cpp.s
 
 # Object files for target PROYECTO_PROGRA3
 PROYECTO_PROGRA3_OBJECTS = \
-"CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj"
+"CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.obj"
 
 # External object files for target PROYECTO_PROGRA3
 PROYECTO_PROGRA3_EXTERNAL_OBJECTS =
 
-PROYECTO_PROGRA3.exe: CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj
+PROYECTO_PROGRA3.exe: CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.obj
 PROYECTO_PROGRA3.exe: CMakeFiles/PROYECTO_PROGRA3.dir/build.make
 PROYECTO_PROGRA3.exe: CMakeFiles/PROYECTO_PROGRA3.dir/linklibs.rsp
 PROYECTO_PROGRA3.exe: CMakeFiles/PROYECTO_PROGRA3.dir/objects1.rsp

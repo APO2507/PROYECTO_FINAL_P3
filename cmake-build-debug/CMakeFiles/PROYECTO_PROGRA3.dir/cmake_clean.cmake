@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj"
-  "CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj.d"
+  "CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.obj"
+  "CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.obj.d"
   "PROYECTO_PROGRA3.exe"
   "PROYECTO_PROGRA3.exe.manifest"
   "PROYECTO_PROGRA3.pdb"

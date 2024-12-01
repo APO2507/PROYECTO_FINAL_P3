@@ -128,29 +128,29 @@ PROYECTO_PROGRA3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/build
 .PHONY : PROYECTO_PROGRA3/fast
 
-parte1+2.obj: parte1+2.cpp.obj
-.PHONY : parte1+2.obj
+plataforma.obj: plataforma.cpp.obj
+.PHONY : plataforma.obj
 
 # target to build an object file
-parte1+2.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj
-.PHONY : parte1+2.cpp.obj
+plataforma.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.obj
+.PHONY : plataforma.cpp.obj
 
-parte1+2.i: parte1+2.cpp.i
-.PHONY : parte1+2.i
+plataforma.i: plataforma.cpp.i
+.PHONY : plataforma.i
 
 # target to preprocess a source file
-parte1+2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.i
-.PHONY : parte1+2.cpp.i
+plataforma.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.i
+.PHONY : plataforma.cpp.i
 
-parte1+2.s: parte1+2.cpp.s
-.PHONY : parte1+2.s
+plataforma.s: plataforma.cpp.s
+.PHONY : plataforma.s
 
 # target to generate assembly for a file
-parte1+2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.s
-.PHONY : parte1+2.cpp.s
+plataforma.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/plataforma.cpp.s
+.PHONY : plataforma.cpp.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... PROYECTO_PROGRA3
-	@echo ... parte1+2.obj
-	@echo ... parte1+2.i
-	@echo ... parte1+2.s
+	@echo ... plataforma.obj
+	@echo ... plataforma.i
+	@echo ... plataforma.s
 .PHONY : help
 
 
