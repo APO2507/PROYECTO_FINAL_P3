@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/esaua/PROYECTO_FINAL_P3/PROBANDO/PROYECTO_FINAL_P3/main.cpp" "CMakeFiles/PROYECTO_PROGRA3.dir/main.cpp.obj" "gcc" "CMakeFiles/PROYECTO_PROGRA3.dir/main.cpp.obj.d"
+  "C:/Users/esaua/PROYECTO_PROGRA3/PROYECTO_FINAL_P3/parte1+2.cpp" "CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj" "gcc" "CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj.d"
   )
 
 # Targets to which this target links.

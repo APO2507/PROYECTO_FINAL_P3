@@ -205,9 +205,12 @@ public:
     }
 
     // Muestra todas las películas guardadas
-    void mostrarPeliculasGuardadas() {
+    void mostrarPeliculasGuardadas(int limite = 10) { // Límite predeterminado de 10 películas
         cout << "Películas guardadas:\n";
+        int contador = 0;
         for (const auto& pelicula : peliculas) {
+            if (contador >= limite) break; // Detener cuando se alcanza el límite
+
             cout << "ID: " << pelicula.id << "\n";
             cout << "Título: " << pelicula.titulo << "\n";
             cout << "Sinopsis: " << pelicula.sinopsis << "\n";
@@ -216,8 +219,13 @@ public:
                 cout << tag << " ";
             }
             cout << "\n\n";
+
+            contador++;
         }
+
+        cout << "Mostrando las primeras " << contador << " películas de un total de " << peliculas.size() << ".\n";
     }
+
 
     // Cargar películas desde un archivo CSV
     void cargarDesdeCSV(const string& rutaArchivo) {
@@ -259,7 +267,7 @@ public:
 
 
 int main() {
-    string filename = "C:/Users/GTX 1660 TI/Documents/C-Lion Proyects/POO II/mpst_full_data.csv";
+    string filename = "../mpst_full_data.csv";
     vector<shared_ptr<Movie>> movies = readMoviesFromCSV(filename);
 
     Trie movieTrie;
@@ -274,7 +282,7 @@ int main() {
     vector<shared_ptr<Movie>> found_movies = movieTrie.search(search_query);
 
     if (!found_movies.empty()) {
-        auto topMovies = getTopRelevantMovies(found_movies);
+        auto topMovies = getTopRelevantMovies(found_movies, 10); // Mostrar solo las 10 más relevantes
         cout << "\nTop Movies found:\n" << endl;
         for (const auto &movie : topMovies) {
             cout << "Title: " << movie->title << endl;
@@ -283,18 +291,19 @@ int main() {
             cout << "-----------------------" << endl;
         }
 
-        cout << "Peliculas total ----->" << found_movies.size() << ", \n" << endl;  // aca solo lo puse para ver cuantas pelis encontraba
+        cout << "Películas total encontradas: " << found_movies.size() << "\n";
     } else {
         cout << "No movies found matching the query." << endl;
     }
+
     PlataformaStreaming plataforma;
 
     // Cargar películas desde el archivo CSV
-    string rutaArchivo = "peliculas.csv";
+    string rutaArchivo = "../mpst_full_data.csv";
     plataforma.cargarDesdeCSV(rutaArchivo);
 
     // Mostrar películas guardadas
-    plataforma.mostrarPeliculasGuardadas();
+    plataforma.mostrarPeliculasGuardadas(20);
 
     return 0;
 }

@@ -1,3 +1,3 @@
-C:/Users/esaua/PROYECTO_FINAL_P3/PROBANDO/PROYECTO_FINAL_P3/cmake-build-debug/CMakeFiles/PROYECTO_PROGRA3.dir
-C:/Users/esaua/PROYECTO_FINAL_P3/PROBANDO/PROYECTO_FINAL_P3/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/esaua/PROYECTO_FINAL_P3/PROBANDO/PROYECTO_FINAL_P3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/esaua/PROYECTO_PROGRA3/PROYECTO_FINAL_P3/cmake-build-debug/CMakeFiles/PROYECTO_PROGRA3.dir
+C:/Users/esaua/PROYECTO_PROGRA3/PROYECTO_FINAL_P3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/esaua/PROYECTO_PROGRA3/PROYECTO_FINAL_P3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2022.3.3\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\esaua\PROYECTO_FINAL_P3\PROBANDO\PROYECTO_FINAL_P3
+CMAKE_SOURCE_DIR = C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\esaua\PROYECTO_FINAL_P3\PROBANDO\PROYECTO_FINAL_P3\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\esaua\PROYECTO_FINAL_P3\PROBANDO\PROYECTO_FINAL_P3\cmake-build-debug\CMakeFiles C:\Users\esaua\PROYECTO_FINAL_P3\PROBANDO\PROYECTO_FINAL_P3\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\cmake-build-debug\CMakeFiles C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\esaua\PROYECTO_FINAL_P3\PROBANDO\PROYECTO_FINAL_P3\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\esaua\PROYECTO_PROGRA3\PROYECTO_FINAL_P3\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,29 +128,29 @@ PROYECTO_PROGRA3/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/build
 .PHONY : PROYECTO_PROGRA3/fast
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+parte1+2.obj: parte1+2.cpp.obj
+.PHONY : parte1+2.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+parte1+2.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.obj
+.PHONY : parte1+2.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+parte1+2.i: parte1+2.cpp.i
+.PHONY : parte1+2.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/main.cpp.i
-.PHONY : main.cpp.i
+parte1+2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.i
+.PHONY : parte1+2.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+parte1+2.s: parte1+2.cpp.s
+.PHONY : parte1+2.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/main.cpp.s
-.PHONY : main.cpp.s
+parte1+2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROYECTO_PROGRA3.dir\build.make CMakeFiles/PROYECTO_PROGRA3.dir/parte1+2.cpp.s
+.PHONY : parte1+2.cpp.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... PROYECTO_PROGRA3
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... parte1+2.obj
+	@echo ... parte1+2.i
+	@echo ... parte1+2.s
 .PHONY : help
 
 
