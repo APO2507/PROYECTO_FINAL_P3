@@ -141,6 +141,105 @@ El algoritmo de relevancia organiza y filtra las películas encontradas basándo
 vector<shared_ptr<Movie>> getTopRelevantMovies(const vector<shared_ptr<Movie>>& movies, int topN = 5);
 ```
 
+##### 4. Clase película
+Representa una película con los siguientes atributos:
+
+Características
+ID: Identificador único de la película.
+Título: Nombre de la película.
+Sinopsis: Descripción o resumen de la película.
+Tags: Etiquetas relacionadas con la película.
+
+Código Relevante cpp
+
+Copiar código
+struct Pelicula {
+    int id;
+    string titulo;
+    string sinopsis;
+    unordered_set<string> tags;
+
+    Pelicula(int id, const string& titulo, const string& sinopsis, const unordered_set<string>& tags)
+        : id(id), titulo(titulo), sinopsis(sinopsis), tags(tags) {}
+};
+##### 5. Clase PlataformaStreaming
+Es una plataforma de streaming que gestiona las películas cargadas.
+
+Atributos
+peliculas: Una lista de películas.
+Métodos
+agregarPelicula: Agrega una película a la plataforma.
+mostrarPeliculasGuardadas: Muestra todas las películas almacenadas.
+cargarDesdeCSV: Carga películas desde un archivo CSV.
+Características
+Carga de Datos:
+
+Procesa un archivo CSV con las siguientes columnas: id, titulo, sinopsis, tags.
+Separa las etiquetas (tags) utilizando el delimitador |.
+Visualización:
+
+Muestra el ID, título, sinopsis y etiquetas de cada película almacenada.
+Código Relevante
+cpp
+Copiar código
+class PlataformaStreaming {
+private:
+    vector<Pelicula> peliculas;
+
+public:
+    void agregarPelicula(const Pelicula& pelicula) {
+        peliculas.push_back(pelicula);
+    }
+
+    void mostrarPeliculasGuardadas() {
+        cout << "Películas guardadas:\n";
+        for (const auto& pelicula : peliculas) {
+            cout << "ID: " << pelicula.id << "\n";
+            cout << "Título: " << pelicula.titulo << "\n";
+            cout << "Sinopsis: " << pelicula.sinopsis << "\n";
+            cout << "Tags: ";
+            for (const auto& tag : pelicula.tags) {
+                cout << tag << " ";
+            }
+            cout << "\n\n";
+        }
+    }
+
+    void cargarDesdeCSV(const string& rutaArchivo) {
+        ifstream archivo(rutaArchivo);
+        if (!archivo.is_open()) {
+            cerr << "Error al abrir el archivo: " << rutaArchivo << "\n";
+            return;
+        }
+
+        string linea;
+        while (getline(archivo, linea)) {
+            if (linea.empty()) continue;
+
+            stringstream ss(linea);
+            string idStr, titulo, sinopsis, tagsStr;
+
+            getline(ss, idStr, ',');
+            getline(ss, titulo, ',');
+            getline(ss, sinopsis, ',');
+            getline(ss, tagsStr, ',');
+
+            int id = stoi(idStr);
+
+            unordered_set<string> tags;
+            stringstream tagsStream(tagsStr);
+            string tag;
+            while (getline(tagsStream, tag, '|')) {
+                tags.insert(tag);
+            }
+
+            agregarPelicula(Pelicula(id, titulo, sinopsis, tags));
+        }
+
+        archivo.close();
+        cout << "Películas cargadas desde el archivo: " << rutaArchivo << "\n";
+    }
+};
 ### Flujo del programa
 1. **Carga de datos:** Se leen los datos de un archivo CSV con información de películas.
 2. **Construcción del Trie:** Se insertan las palabras de títulos y sinopsis en el Trie.
