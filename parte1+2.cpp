@@ -8,6 +8,7 @@
 #include <memory>
 #include <algorithm>
 #include <cctype>
+#include <unordered_set>
 
 using namespace std;
 
@@ -183,19 +184,19 @@ vector<shared_ptr<Movie>> readMoviesFromCSV(const string &filename) {
 }
 
 struct Pelicula {
-    int id;
+    string id;
     string titulo;
     string sinopsis;
     unordered_set<string> tags;
 
-    Pelicula(int id, const string& titulo, const string& sinopsis, const unordered_set<string>& tags)
+    Pelicula(const string& id, const string& titulo, const string& sinopsis, const unordered_set<string>& tags)
         : id(id), titulo(titulo), sinopsis(sinopsis), tags(tags) {}
 };
 
 // Clase PlataformaStreaming
 class PlataformaStreaming {
 private:
-    vector<Pelicula> peliculas;             // Lista de películas
+    vector<Pelicula> peliculas; // Lista de películas
 
 public:
     // Agrega una película a la plataforma
@@ -234,13 +235,10 @@ public:
             string idStr, titulo, sinopsis, tagsStr;
 
             // Leer los campos separados por comas
-            getline(ss, idStr, ',');
+            getline(ss, idStr, ',');  // Usamos idStr directamente como string
             getline(ss, titulo, ',');
             getline(ss, sinopsis, ',');
             getline(ss, tagsStr, ',');
-
-            // Convertir ID a entero
-            int id = stoi(idStr);
 
             // Procesar tags (separados por "|")
             unordered_set<string> tags;
@@ -251,13 +249,14 @@ public:
             }
 
             // Crear la película y agregarla
-            agregarPelicula(Pelicula(id, titulo, sinopsis, tags));
+            agregarPelicula(Pelicula(idStr, titulo, sinopsis, tags));
         }
 
         archivo.close();
         cout << "Películas cargadas desde el archivo: " << rutaArchivo << "\n";
     }
 };
+
 
 int main() {
     string filename = "C:/Users/GTX 1660 TI/Documents/C-Lion Proyects/POO II/mpst_full_data.csv";
@@ -297,7 +296,5 @@ int main() {
     // Mostrar películas guardadas
     plataforma.mostrarPeliculasGuardadas();
 
-    return 0;
-}
     return 0;
 }
