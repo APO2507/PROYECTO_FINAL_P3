@@ -8,6 +8,10 @@
 * Gabriel Raymi Vaccaro Ortiz
 * Francisco Jose Lira Francia
 
+## VIDEO DE PRESENTACIÓN E IMPLEMENTACIÓN
+
+https://drive.google.com/file/d/1I_t0BqrOM-KP2OMppd-B6Q32vdGyKocH/view?usp=drive_link
+
 ## EXPLICACIÓN CÓDIGO
 
 ### Implementación de Lectura de Archivo CSV
